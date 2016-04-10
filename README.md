@@ -7,11 +7,11 @@ Installation.
 1. Install OS X drivers for your receiver
 2. Install Soapy SDR for the receiver(s), you use.
 Receivers, supported by this application:
-- https://github.com/pothosware/SoapyRTLSDR
+https://github.com/pothosware/SoapyRTLSDR
 (manual https://github.com/pothosware/SoapyRTLSDR/wiki)
-- https://github.com/pothosware/SoapyHackRF
+https://github.com/pothosware/SoapyHackRF
 (manual https://github.com/pothosware/SoapyHackRF/wiki)
-- https://github.com/pothosware/SoapySDRPlay
+https://github.com/pothosware/SoapySDRPlay
 (manual https://github.com/pothosware/SoapySDRPlay/wiki)
 3. Download files from this repository. Binary files are placed in Bin folder. 
 4. Unpack from Bin, launch Frequency Plotter and enjoy :)
