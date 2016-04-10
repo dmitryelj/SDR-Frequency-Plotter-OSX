@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		260B5B7A1CBA74BE006E5CB4 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260B5B721CBA74BE006E5CB4 /* GraphView.swift */; };
+		260B5B7B1CBA74BE006E5CB4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260B5B731CBA74BE006E5CB4 /* ViewController.swift */; };
+		260B5B7C1CBA74BE006E5CB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260B5B741CBA74BE006E5CB4 /* AppDelegate.swift */; };
+		260B5B7D1CBA74BE006E5CB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 260B5B751CBA74BE006E5CB4 /* Assets.xcassets */; };
+		260B5B801CBA74BE006E5CB4 /* ViewControllerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260B5B791CBA74BE006E5CB4 /* ViewControllerSettings.swift */; };
+		260B5B831CBA7512006E5CB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 260B5B811CBA7512006E5CB4 /* Main.storyboard */; };
+		5647AA621CB561F7004D8024 /* ReceiverModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5647AA611CB561F7004D8024 /* ReceiverModel.swift */; };
+		5647AA641CB56248004D8024 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5647AA631CB56248004D8024 /* Globals.swift */; };
+		5647AA6A1CB56651004D8024 /* SignalProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5647AA691CB56651004D8024 /* SignalProcessing.swift */; };
+		5647AA7C1CB79A15004D8024 /* DSP.m in Sources */ = {isa = PBXBuildFile; fileRef = 5647AA7B1CB79A15004D8024 /* DSP.m */; };
+		5677350D1CB3F9D200E43D32 /* libSoapySDR.0.5-0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5677350A1CB3F9D200E43D32 /* libSoapySDR.0.5-0.dylib */; };
+		567735111CB3FB2000E43D32 /* FFT.m in Sources */ = {isa = PBXBuildFile; fileRef = 567735101CB3FB2000E43D32 /* FFT.m */; };
+		567735141CB3FB6F00E43D32 /* SoapyReceiverImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 567735131CB3FB6F00E43D32 /* SoapyReceiverImpl.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		565298DD1C9981E7009AF03B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		260B5B721CBA74BE006E5CB4 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphView.swift; path = FrequencyPlotter/GraphView.swift; sourceTree = SOURCE_ROOT; };
+		260B5B731CBA74BE006E5CB4 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = FrequencyPlotter/ViewController.swift; sourceTree = SOURCE_ROOT; };
+		260B5B741CBA74BE006E5CB4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = FrequencyPlotter/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		260B5B751CBA74BE006E5CB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = FrequencyPlotter/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		260B5B771CBA74BE006E5CB4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = FrequencyPlotter/Info.plist; sourceTree = SOURCE_ROOT; };
+		260B5B781CBA74BE006E5CB4 /* FrequencyPlotter-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FrequencyPlotter-Bridging-Header.h"; path = "FrequencyPlotter/FrequencyPlotter-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		260B5B791CBA74BE006E5CB4 /* ViewControllerSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerSettings.swift; path = FrequencyPlotter/ViewControllerSettings.swift; sourceTree = SOURCE_ROOT; };
+		260B5B821CBA7512006E5CB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = FrequencyPlotter/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		5647AA611CB561F7004D8024 /* ReceiverModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReceiverModel.swift; path = Shared/ReceiverModel.swift; sourceTree = SOURCE_ROOT; };
+		5647AA631CB56248004D8024 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Globals.swift; path = Shared/Globals.swift; sourceTree = SOURCE_ROOT; };
+		5647AA691CB56651004D8024 /* SignalProcessing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignalProcessing.swift; path = Shared/SignalProcessing.swift; sourceTree = SOURCE_ROOT; };
+		5647AA7A1CB79A15004D8024 /* DSP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DSP.h; path = Shared/DSP.h; sourceTree = SOURCE_ROOT; };
+		5647AA7B1CB79A15004D8024 /* DSP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DSP.m; path = Shared/DSP.m; sourceTree = SOURCE_ROOT; };
+		5647AA831CB7EE13004D8024 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Config.h; path = SoapyShared/SoapySDR/Config.h; sourceTree = SOURCE_ROOT; };
+		5647AA841CB7EE13004D8024 /* Config.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Config.hpp; path = SoapyShared/SoapySDR/Config.hpp; sourceTree = SOURCE_ROOT; };
+		5647AA851CB7EE13004D8024 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = SoapyShared/SoapySDR/Constants.h; sourceTree = SOURCE_ROOT; };
+		5647AA861CB7EE13004D8024 /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Device.h; path = SoapyShared/SoapySDR/Device.h; sourceTree = SOURCE_ROOT; };
+		5647AA871CB7EE13004D8024 /* Device.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Device.hpp; path = SoapyShared/SoapySDR/Device.hpp; sourceTree = SOURCE_ROOT; };
+		5647AA881CB7EE13004D8024 /* Errors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Errors.h; path = SoapyShared/SoapySDR/Errors.h; sourceTree = SOURCE_ROOT; };
+		5647AA891CB7EE13004D8024 /* Errors.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Errors.hpp; path = SoapyShared/SoapySDR/Errors.hpp; sourceTree = SOURCE_ROOT; };
+		5647AA8A1CB7EE13004D8024 /* Formats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Formats.h; path = SoapyShared/SoapySDR/Formats.h; sourceTree = SOURCE_ROOT; };
+		5647AA8B1CB7EE13004D8024 /* Formats.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Formats.hpp; path = SoapyShared/SoapySDR/Formats.hpp; sourceTree = SOURCE_ROOT; };
+		5647AA8C1CB7EE13004D8024 /* Logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Logger.h; path = SoapyShared/SoapySDR/Logger.h; sourceTree = SOURCE_ROOT; };
+		5647AA8D1CB7EE13004D8024 /* Logger.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Logger.hpp; path = SoapyShared/SoapySDR/Logger.hpp; sourceTree = SOURCE_ROOT; };
+		5647AA8E1CB7EE13004D8024 /* Modules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Modules.h; path = SoapyShared/SoapySDR/Modules.h; sourceTree = SOURCE_ROOT; };
+		5647AA8F1CB7EE13004D8024 /* Modules.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Modules.hpp; path = SoapyShared/SoapySDR/Modules.hpp; sourceTree = SOURCE_ROOT; };
+		5647AA901CB7EE13004D8024 /* Registry.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Registry.hpp; path = SoapyShared/SoapySDR/Registry.hpp; sourceTree = SOURCE_ROOT; };
+		5647AA911CB7EE13004D8024 /* Time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Time.h; path = SoapyShared/SoapySDR/Time.h; sourceTree = SOURCE_ROOT; };
+		5647AA921CB7EE13004D8024 /* Time.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Time.hpp; path = SoapyShared/SoapySDR/Time.hpp; sourceTree = SOURCE_ROOT; };
+		5647AA931CB7EE13004D8024 /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Types.h; path = SoapyShared/SoapySDR/Types.h; sourceTree = SOURCE_ROOT; };
+		5647AA941CB7EE13004D8024 /* Types.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Types.hpp; path = SoapyShared/SoapySDR/Types.hpp; sourceTree = SOURCE_ROOT; };
+		5647AA951CB7EE13004D8024 /* Version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Version.h; path = SoapyShared/SoapySDR/Version.h; sourceTree = SOURCE_ROOT; };
+		5647AA961CB7EE13004D8024 /* Version.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Version.hpp; path = SoapyShared/SoapySDR/Version.hpp; sourceTree = SOURCE_ROOT; };
+		565298861C981A07009AF03B /* FrequencyPlotter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrequencyPlotter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5677350A1CB3F9D200E43D32 /* libSoapySDR.0.5-0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSoapySDR.0.5-0.dylib"; path = "SoapyShared/libSoapySDR.0.5-0.dylib"; sourceTree = SOURCE_ROOT; };
+		5677350F1CB3FB2000E43D32 /* FFT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFT.h; path = Shared/FFT.h; sourceTree = SOURCE_ROOT; };
+		567735101CB3FB2000E43D32 /* FFT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FFT.m; path = Shared/FFT.m; sourceTree = SOURCE_ROOT; };
+		567735121CB3FB6F00E43D32 /* SoapyReceiverImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SoapyReceiverImpl.h; path = Shared/SoapyReceiverImpl.h; sourceTree = SOURCE_ROOT; };
+		567735131CB3FB6F00E43D32 /* SoapyReceiverImpl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = SoapyReceiverImpl.mm; path = Shared/SoapyReceiverImpl.mm; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		565298831C981A07009AF03B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5677350D1CB3F9D200E43D32 /* libSoapySDR.0.5-0.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		560DC4C41CB2A17C00AFFB1E /* SoapySDRshared */ = {
+			isa = PBXGroup;
+			children = (
+				5647AA821CB7EE04004D8024 /* SoapySDR */,
+				5677350A1CB3F9D200E43D32 /* libSoapySDR.0.5-0.dylib */,
+			);
+			name = SoapySDRshared;
+			sourceTree = "<group>";
+		};
+		5647AA821CB7EE04004D8024 /* SoapySDR */ = {
+			isa = PBXGroup;
+			children = (
+				5647AA831CB7EE13004D8024 /* Config.h */,
+				5647AA841CB7EE13004D8024 /* Config.hpp */,
+				5647AA851CB7EE13004D8024 /* Constants.h */,
+				5647AA861CB7EE13004D8024 /* Device.h */,
+				5647AA871CB7EE13004D8024 /* Device.hpp */,
+				5647AA881CB7EE13004D8024 /* Errors.h */,
+				5647AA891CB7EE13004D8024 /* Errors.hpp */,
+				5647AA8A1CB7EE13004D8024 /* Formats.h */,
+				5647AA8B1CB7EE13004D8024 /* Formats.hpp */,
+				5647AA8C1CB7EE13004D8024 /* Logger.h */,
+				5647AA8D1CB7EE13004D8024 /* Logger.hpp */,
+				5647AA8E1CB7EE13004D8024 /* Modules.h */,
+				5647AA8F1CB7EE13004D8024 /* Modules.hpp */,
+				5647AA901CB7EE13004D8024 /* Registry.hpp */,
+				5647AA911CB7EE13004D8024 /* Time.h */,
+				5647AA921CB7EE13004D8024 /* Time.hpp */,
+				5647AA931CB7EE13004D8024 /* Types.h */,
+				5647AA941CB7EE13004D8024 /* Types.hpp */,
+				5647AA951CB7EE13004D8024 /* Version.h */,
+				5647AA961CB7EE13004D8024 /* Version.hpp */,
+			);
+			name = SoapySDR;
+			sourceTree = "<group>";
+		};
+		5652987D1C981A07009AF03B = {
+			isa = PBXGroup;
+			children = (
+				565298881C981A07009AF03B /* FrequencyPlotter */,
+				565298871C981A07009AF03B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		565298871C981A07009AF03B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				565298861C981A07009AF03B /* FrequencyPlotter.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		565298881C981A07009AF03B /* FrequencyPlotter */ = {
+			isa = PBXGroup;
+			children = (
+				5677350E1CB3FAF700E43D32 /* Shared */,
+				560DC4C41CB2A17C00AFFB1E /* SoapySDRshared */,
+				260B5B741CBA74BE006E5CB4 /* AppDelegate.swift */,
+				260B5B731CBA74BE006E5CB4 /* ViewController.swift */,
+				260B5B791CBA74BE006E5CB4 /* ViewControllerSettings.swift */,
+				260B5B721CBA74BE006E5CB4 /* GraphView.swift */,
+				260B5B781CBA74BE006E5CB4 /* FrequencyPlotter-Bridging-Header.h */,
+				260B5B811CBA7512006E5CB4 /* Main.storyboard */,
+				260B5B751CBA74BE006E5CB4 /* Assets.xcassets */,
+				260B5B771CBA74BE006E5CB4 /* Info.plist */,
+			);
+			name = FrequencyPlotter;
+			path = SpectrumGraph;
+			sourceTree = "<group>";
+		};
+		5677350E1CB3FAF700E43D32 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				567735121CB3FB6F00E43D32 /* SoapyReceiverImpl.h */,
+				567735131CB3FB6F00E43D32 /* SoapyReceiverImpl.mm */,
+				5677350F1CB3FB2000E43D32 /* FFT.h */,
+				567735101CB3FB2000E43D32 /* FFT.m */,
+				5647AA7A1CB79A15004D8024 /* DSP.h */,
+				5647AA7B1CB79A15004D8024 /* DSP.m */,
+				5647AA611CB561F7004D8024 /* ReceiverModel.swift */,
+				5647AA691CB56651004D8024 /* SignalProcessing.swift */,
+				5647AA631CB56248004D8024 /* Globals.swift */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		565298851C981A07009AF03B /* FrequencyPlotter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 565298951C981A07009AF03B /* Build configuration list for PBXNativeTarget "FrequencyPlotter" */;
+			buildPhases = (
+				565298821C981A07009AF03B /* Sources */,
+				565298831C981A07009AF03B /* Frameworks */,
+				565298841C981A07009AF03B /* Resources */,
+				565298DD1C9981E7009AF03B /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FrequencyPlotter;
+			productName = SpectrumGraph;
+			productReference = 565298861C981A07009AF03B /* FrequencyPlotter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5652987E1C981A07009AF03B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Dmitrii Eliuseev";
+				TargetAttributes = {
+					565298851C981A07009AF03B = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 565298811C981A07009AF03B /* Build configuration list for PBXProject "FrequencyPlotter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5652987D1C981A07009AF03B;
+			productRefGroup = 565298871C981A07009AF03B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				565298851C981A07009AF03B /* FrequencyPlotter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		565298841C981A07009AF03B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				260B5B831CBA7512006E5CB4 /* Main.storyboard in Resources */,
+				260B5B7D1CBA74BE006E5CB4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		565298821C981A07009AF03B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				567735111CB3FB2000E43D32 /* FFT.m in Sources */,
+				5647AA6A1CB56651004D8024 /* SignalProcessing.swift in Sources */,
+				5647AA621CB561F7004D8024 /* ReceiverModel.swift in Sources */,
+				260B5B7A1CBA74BE006E5CB4 /* GraphView.swift in Sources */,
+				260B5B7B1CBA74BE006E5CB4 /* ViewController.swift in Sources */,
+				260B5B7C1CBA74BE006E5CB4 /* AppDelegate.swift in Sources */,
+				567735141CB3FB6F00E43D32 /* SoapyReceiverImpl.mm in Sources */,
+				5647AA641CB56248004D8024 /* Globals.swift in Sources */,
+				5647AA7C1CB79A15004D8024 /* DSP.m in Sources */,
+				260B5B801CBA74BE006E5CB4 /* ViewControllerSettings.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		260B5B811CBA7512006E5CB4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				260B5B821CBA7512006E5CB4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		565298931C981A07009AF03B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		565298941C981A07009AF03B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		565298961C981A07009AF03B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/SoapyShared\"";
+				INFOPLIST_FILE = "$(SRCROOT)/FrequencyPlotter/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SoapyShared",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = Home.SpectrumGraph;
+				PRODUCT_NAME = FrequencyPlotter;
+				SWIFT_OBJC_BRIDGING_HEADER = "FrequencyPlotter/FrequencyPlotter-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		565298971C981A07009AF03B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/SoapyShared\"";
+				INFOPLIST_FILE = "$(SRCROOT)/FrequencyPlotter/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SoapyShared",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = Home.SpectrumGraph;
+				PRODUCT_NAME = FrequencyPlotter;
+				SWIFT_OBJC_BRIDGING_HEADER = "FrequencyPlotter/FrequencyPlotter-Bridging-Header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		565298811C981A07009AF03B /* Build configuration list for PBXProject "FrequencyPlotter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				565298931C981A07009AF03B /* Debug */,
+				565298941C981A07009AF03B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		565298951C981A07009AF03B /* Build configuration list for PBXNativeTarget "FrequencyPlotter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				565298961C981A07009AF03B /* Debug */,
+				565298971C981A07009AF03B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5652987E1C981A07009AF03B /* Project object */;
+}
