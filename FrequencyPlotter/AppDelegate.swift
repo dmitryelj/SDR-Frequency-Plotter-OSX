@@ -5,13 +5,14 @@
 //  Created by Dmitrii Eliuseev on 15/03/16.
 //  Copyright © 2016 Dmitrii Eliuseev. All rights reserved.
 //  dmitryelj@gmail.com
+//  Install:
+//  otool -L /Users/dmitriieliuseev/Documents/Temp/FrequencyPlotter
+//  install_name_tool -change libSoapySDR.0.5-1.dylib /usr/local/lib/libSoapySDR.0.5-1.dylib FrequencyPlotter
 
 import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-
-
 
   func applicationDidFinishLaunching(aNotification: NSNotification) {
     // Insert code here to initialize your application
