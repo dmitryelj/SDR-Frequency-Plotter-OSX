@@ -67,8 +67,7 @@
   std::string loadResult = SoapySDR::loadModule(module);
   NSLog(@"loadModule: '%s'", loadResult.c_str());
   if (loadResult.length() > 0) {
-    NSLog(@"LoadModule failed: %s", loadResult.c_str());
-    return EXIT_FAILURE;
+    NSLog(@"LoadModule message: %s", loadResult.c_str());
   }
   
   // Enumerate devices
@@ -76,6 +75,7 @@
   NSLog(@"enumerate: %lu params", devices.size());
   if (devices.size() == 0) {
     NSLog(@"%@: receiver not found", library);
+    SoapySDR::unloadModule(module);
     return EXIT_FAILURE;
   }
   
