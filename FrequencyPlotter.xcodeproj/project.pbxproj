@@ -20,6 +20,7 @@
 		5647AA7C1CB79A15004D8024 /* DSP.m in Sources */ = {isa = PBXBuildFile; fileRef = 5647AA7B1CB79A15004D8024 /* DSP.m */; };
 		567735111CB3FB2000E43D32 /* FFT.m in Sources */ = {isa = PBXBuildFile; fileRef = 567735101CB3FB2000E43D32 /* FFT.m */; };
 		567735141CB3FB6F00E43D32 /* SoapyReceiverImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 567735131CB3FB6F00E43D32 /* SoapyReceiverImpl.mm */; };
+		56D6F6B01CBD09D200EA158F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 56D6F6AF1CBD09D200EA158F /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -74,6 +75,7 @@
 		567735101CB3FB2000E43D32 /* FFT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FFT.m; path = Shared/FFT.m; sourceTree = SOURCE_ROOT; };
 		567735121CB3FB6F00E43D32 /* SoapyReceiverImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SoapyReceiverImpl.h; path = Shared/SoapyReceiverImpl.h; sourceTree = SOURCE_ROOT; };
 		567735131CB3FB6F00E43D32 /* SoapyReceiverImpl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = SoapyReceiverImpl.mm; path = Shared/SoapyReceiverImpl.mm; sourceTree = SOURCE_ROOT; };
+		56D6F6AF1CBD09D200EA158F /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = FrequencyPlotter/Localizable.strings; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 				260B5B811CBA7512006E5CB4 /* Main.storyboard */,
 				260B5B751CBA74BE006E5CB4 /* Assets.xcassets */,
 				260B5B771CBA74BE006E5CB4 /* Info.plist */,
+				56D6F6AF1CBD09D200EA158F /* Localizable.strings */,
 			);
 			name = FrequencyPlotter;
 			path = SpectrumGraph;
@@ -185,6 +188,7 @@
 				565298831C981A07009AF03B /* Frameworks */,
 				565298841C981A07009AF03B /* Resources */,
 				565298DD1C9981E7009AF03B /* CopyFiles */,
+				56D6F6B11CBD0CE500EA158F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -234,11 +238,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				260B5B831CBA7512006E5CB4 /* Main.storyboard in Resources */,
+				56D6F6B01CBD09D200EA158F /* Localizable.strings in Resources */,
 				260B5B7D1CBA74BE006E5CB4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		56D6F6B11CBD0CE500EA158F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"Building ${TARGET_NAME}\"\necho \"Src: ${SRCROOT}, Dest: ${BUILT_PRODUCTS_DIR}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		565298821C981A07009AF03B /* Sources */ = {
@@ -363,7 +384,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/SoapyShared",
 					/usr/local/lib/,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -385,7 +405,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/SoapyShared",
 					/usr/local/lib/,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;

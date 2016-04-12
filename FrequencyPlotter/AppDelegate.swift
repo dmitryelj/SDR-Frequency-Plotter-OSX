@@ -26,5 +26,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // Close app by pressing the Close button
     return true
   }
+  
+  func appVersion() -> String {
+    return NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as! String
+  }
+  
+  func appBuild() -> String {
+    return NSBundle.mainBundle().objectForInfoDictionaryKey(kCFBundleVersionKey as String) as! String
+  }
+  
+  func versionBuild() -> String {
+    let version = appVersion(), build = appBuild()
+    
+    return version == build ? "v\(version)" : "v\(version)(\(build))"
+  }
 
 }

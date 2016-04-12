@@ -4,7 +4,7 @@
 //
 //  Created by Dmitrii Eliuseev on 15/03/16.
 //  Copyright © 2016 Dmitrii Eliuseev. All rights reserved.
-//
+//  dmitryelj@gmail.com
 
 import Cocoa
 
@@ -55,5 +55,9 @@ extension String {
   
   func trim() -> String {
     return (self as String).stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+  }
+  
+  var localized: String {
+    return NSLocalizedString(self, tableName: nil, bundle: NSBundle.mainBundle(), value: "", comment: "")
   }
 }

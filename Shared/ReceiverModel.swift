@@ -25,7 +25,7 @@ class ReceiverModel: NSObject {
 
   func connectReceiver() -> Bool { return false }
   func disconnect() { receiverStatus = .Disconnected  }
-  func startRX() {  }
+  func startRX() -> Bool { return true }
   func stopRX() {  }
   func didReceiveData() {  }
   
@@ -68,10 +68,11 @@ class DemoReceiverModel: ReceiverModel {
     receiverStatus = .Disconnected
   }
   
-  override func startRX() {
+  override func startRX() -> Bool {
     if demoTimer == nil {
       demoTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(DemoReceiverModel.demoUpdate(_:)), userInfo: nil, repeats: true)
     }
+    return true
   }
   
   override func stopRX() {
@@ -141,10 +142,11 @@ class SoapyReceiverModel: ReceiverModel, SoapyReceiverImplDelegate {
     }
   }
 
-  override func startRX() {
+  override func startRX() -> Bool {
     if receiverStatus == .Connected {
-      soapyReceiver.startRX()
+      return soapyReceiver.startRX() == EXIT_SUCCESS
     }
+    return false
   }
   
   override func stopRX() {

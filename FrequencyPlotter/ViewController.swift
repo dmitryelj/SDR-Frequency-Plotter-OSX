@@ -49,8 +49,8 @@ class ViewController: NSViewController, NSWindowDelegate, NSComboBoxDataSource, 
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    self.view.window?.delegate = self
+
+    view.window?.delegate = self
     
     // Setup
     receiverModel.delegate = self
@@ -103,7 +103,13 @@ class ViewController: NSViewController, NSWindowDelegate, NSComboBoxDataSource, 
   }
   
   override func viewDidAppear() {
-    self.view.window?.delegate = self
+    super.viewDidAppear()
+    view.window?.delegate = self
+    
+    // Show app and version in title
+    let appDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
+    let version = appDelegate.appVersion()
+    view.window?.title = "wnd_title".localized + " v" + version
   }
   
   func windowShouldClose(sender: AnyObject) -> Bool {
@@ -122,9 +128,9 @@ class ViewController: NSViewController, NSWindowDelegate, NSComboBoxDataSource, 
   func updateValues() {
     textFrequencyStart.stringValue = String(format: "%.2f", freqMin/1.M)
     textFrequencyEnd.stringValue = String(format: "%.2f", freqMax/1.M)
-    labelFrequency.stringValue = String(format: "%.2f MHz", freqCurrent/1.M)
+    labelFrequency.stringValue = String(format: "%.2f %@", freqCurrent/1.M, "mhz".localized)
     let resultSize = calcResultSize()
-    labelEstimatedSize.stringValue = String(format: "%dx%d px", Int(resultSize.width), Int(resultSize.height))
+    labelEstimatedSize.stringValue = String(format: "%dx%d %@", Int(resultSize.width), Int(resultSize.height), "px".localized)
     if isScanning {
       progressView.floatValue = Float(100*(freqCurrent - freqMin)/(freqMax - freqMin))
     } else {
@@ -147,7 +153,7 @@ class ViewController: NSViewController, NSWindowDelegate, NSComboBoxDataSource, 
     if aComboBox.tag == tagResolutionSelect && index >= 0 && index < fftVariants.count {
       let fft = fftVariants[index]
       let blockSize = CGFloat(fft)*wndRecieverSize/CGFloat(receiverModel.sampleRate)
-      return "\(blockSize) pixels/Mb"
+      return "\(blockSize) \("pxmb".localized)"
     }
     if aComboBox.tag == tagReceiverSelect && index >= 0 && index < receivers.count{
       let receiver = receivers[index]
@@ -256,9 +262,17 @@ class ViewController: NSViewController, NSWindowDelegate, NSComboBoxDataSource, 
       NSUserDefaults.standardUserDefaults().synchronize()
       
       if receiverModel.receiverStatus != .Connected {
-        receiverModel.connectReceiver()
-        receiverModel.loadSettings()
-        receiverModel.startRX()
+        let res = receiverModel.connectReceiver()
+        if res {
+          receiverModel.loadSettings()
+          receiverModel.startRX()
+          
+          buttonStartStop.title = "stop".localized
+          comboReceiverSelect.enabled = false
+        } else {
+          showNoReceiverMessage()
+          return
+        }
       }
        
       // Set size
@@ -275,31 +289,38 @@ class ViewController: NSViewController, NSWindowDelegate, NSComboBoxDataSource, 
 
   @IBAction func onButtonScanStop(sender: AnyObject) {
     if isScanning {
-      isScanning = false
+      stopScanning()
     }
   }
   
   @IBAction func onButtonReceiverStart(sender: AnyObject) {
     if receiverModel.isRX() == false {
-      receiverModel.connectReceiver()
-      receiverModel.startRX()
-      receiverModel.loadSettings()
-      receiverModel.setFrequency(freqCurrent)
-      buttonStartStop.title = "Stop"
-      comboReceiverSelect.enabled = false
+      let res = receiverModel.connectReceiver()
+      if res {
+        receiverModel.startRX()
+        receiverModel.loadSettings()
+        receiverModel.setFrequency(freqCurrent)
+        buttonStartStop.title = "stop".localized
+        comboReceiverSelect.enabled = false
+      } else {
+        showNoReceiverMessage()
+      }
     } else {
+      if isScanning {
+        stopScanning()
+      }
       receiverModel.stopRX()
+
       dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
         self.receiverModel.disconnect()
         self.signalProcessing.clearData()
-        self.buttonStartStop.title = "Start"
+        self.buttonStartStop.title = "start".localized
         self.comboReceiverSelect.enabled = true
       }
     }
   }
   
   @IBAction func onButtonSave(obj:AnyObject?) {
-    //let img = signalProcessing.prepareResultImage()
     let rep = graphResults.bitmapImageRepForCachingDisplayInRect(graphResults.bounds)
     graphResults.cacheDisplayInRect(graphResults.bounds, toBitmapImageRep: rep!)
     
@@ -319,12 +340,7 @@ class ViewController: NSViewController, NSWindowDelegate, NSComboBoxDataSource, 
       let res = data.writeToFile(path.path!, atomically: false)
       NSLog("Saved: \(res)")
       
-      let myPopup: NSAlert = NSAlert()
-      myPopup.messageText = "Information"
-      myPopup.informativeText = "'\(fileName)' was saved in Documents folder"
-      myPopup.alertStyle = NSAlertStyle.WarningAlertStyle
-      myPopup.addButtonWithTitle("OK")
-      myPopup.runModal()
+      showInfoMessage("information".localized, message: "'\(fileName)' \("was_saved".localized)")
     }
   }
   
@@ -334,6 +350,11 @@ class ViewController: NSViewController, NSWindowDelegate, NSComboBoxDataSource, 
   }
   
   @IBAction func onButtonReceiverSettings(sender: AnyObject) {
+    if receiverModel.receiverStatus != .Connected {
+      showInfoMessage("information".localized, message: "receiver_not_started".localized)
+      return
+    }
+    
     let settingsView = storyboard?.instantiateControllerWithIdentifier("ViewControllerSettings") as! ViewControllerSettings
     settingsView.titleGain1 = receiverModel.getAmp1Title()
     settingsView.valueGain1 = CGFloat(receiverModel.getAmp1Val())
@@ -354,7 +375,18 @@ class ViewController: NSViewController, NSWindowDelegate, NSComboBoxDataSource, 
     popover.showRelativeToRect(buttonSettings.frame, ofView: self.view, preferredEdge: .MinY)
   }
   
-  func showErrorMessage(title:String, error:String) {
+  func showInfoMessage(title:String, message:String) {
+    let myPopup = NSAlert()
+    myPopup.messageText = title
+    myPopup.informativeText = message
+    myPopup.alertStyle = .InformationalAlertStyle
+    myPopup.addButtonWithTitle("ok".localized)
+    //myPopup.runModal()
+    myPopup.beginSheetModalForWindow(self.view.window!, completionHandler: nil)
+  }
+  
+  func showNoReceiverMessage() {
+    showInfoMessage("warning".localized, message: "receiver_start_error".localized)
   }
   
   // MARK: Receiver
@@ -385,7 +417,7 @@ class ViewController: NSViewController, NSWindowDelegate, NSComboBoxDataSource, 
       isScanning = true
       startTime = NSDate()
     } else {
-      showErrorMessage("Warning", error: "Cannot connect to receiver")
+      showNoReceiverMessage()
     }
   }
   
@@ -401,7 +433,7 @@ class ViewController: NSViewController, NSWindowDelegate, NSComboBoxDataSource, 
       // Calc scanning time
       if let start = startTime {
         let ti = NSDate().timeIntervalSinceDate(start)
-        labelScanTime.stringValue = String(format:"Scan time: %.1fs", ti)
+        labelScanTime.stringValue = String(format:"%@: %.1fs", "scan_time".localized, ti)
       }
       
       // Finish

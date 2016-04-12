@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  FrequencyPlotter
+
+  Created by Dmitrii Eliuseev on 12/04/16.
+  Copyright © 2016 Dmitrii Eliuseev. All rights reserved.
+*/
+
+"wnd_title" = "SDR Frequency Plotter";
+"start" = "Start";
+"stop"  = "Stop";
+"ok"  = "OK";
+"information" = "Information";
+"warning" = "Warning";
+
+"mhz" = "MHz";
+"px" = "px";
+"pxmb" = "pixels/Mb";
+
+"was_saved" = "was saved in Documents folder";
+"receiver_start_error" = "Cannot start receiver, please check connection or driver settings";
+"receiver_not_started" = "Receiver is not started";
+"scan_time" = "Scan time:";
