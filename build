@@ -1,0 +1,3 @@
+cd "$(dirname "$0")"
+xcodebuild -scheme SpectrumGraph DSTROOT=Bin archive
+
